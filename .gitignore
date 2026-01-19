@@ -1,0 +1,51 @@
+# Zenith Repository Protection Protocol
+# Director: Dr. Christopher Adkins (ORCID: 0009-0007-6915-1199)
+
+# --- SECURITY ---
+# Never push the actual private shadow keys or passphrases
+.env
+local_shadow_key.txt
+passphrase.txt
+secrets.json
+
+# --- COMPILED BINARIES ---
+# These are generated per-platform and should not be tracked
+murequa_engine
+murequa_v2
+magic_angle_sim
+pyramidal_hal
+*.o
+*.so
+*.exe
+*.dll
+*.out
+
+# --- RUST & SYSTEMS ---
+target/
+Cargo.lock
+**/*.rs.bk
+
+# --- PYTHON ---
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+
+# --- LOGS & DATA ---
+# Keep local audit logs private; only push Blind Commitments
+*.log
+genesis_audit.log
+murequa_debug.log
+data/*.json
+!data/config.json
+
+# --- OS & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
