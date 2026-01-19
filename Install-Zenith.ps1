@@ -16,12 +16,12 @@ if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
 }
 
 # 2. Set Persistent Root Identity
-Write-Host "[1/7] Locking Root Identity (ORCID: 0009-0007-6915-1199)..." -ForegroundColor Yellow
+Write-Host "[1/8] Locking Root Identity (ORCID: 0009-0007-6915-1199)..." -ForegroundColor Yellow
 [System.Environment]::SetEnvironmentVariable('ROOT_ORCID', '0009-0007-6915-1199', 'Machine')
 $env:ROOT_ORCID = '0009-0007-6915-1199'
 
 # 3. Dependency Check & Installation via Winget
-Write-Host "[2/7] Deploying Build Stack (C++, Rust, Python, Git)..." -ForegroundColor Yellow
+Write-Host "[2/8] Deploying Build Stack (C++, Rust, Python, Git)..." -ForegroundColor Yellow
 
 function Install-App {
     param($Id, $Name)
@@ -39,7 +39,7 @@ Install-App "Python.Python.3.11" "Python Runtime"
 Install-App "Git.Git" "Git Version Control"
 
 # 4. Construct Zenith File System at C:\Zenith
-Write-Host "[3/7] Constructing Zenith Architecture at C:\Zenith..." -ForegroundColor Yellow
+Write-Host "[3/8] Constructing Zenith Architecture at C:\Zenith..." -ForegroundColor Yellow
 $ZenithPath = "C:\Zenith"
 
 if (!(Test-Path $ZenithPath)) {
@@ -58,7 +58,7 @@ foreach ($dir in $SubDirs) {
 Set-Location $ZenithPath
 
 # 5. Genesis Compilation (MuReQua Engine)
-Write-Host "[4/7] Compiling MuReQua Engine (8024x8000 Lattice)..." -ForegroundColor Yellow
+Write-Host "[4/8] Compiling MuReQua Engine (8024x8000 Lattice)..." -ForegroundColor Yellow
 $EngineSource = @"
 #include <iostream>
 #include <fstream>
@@ -92,14 +92,14 @@ try {
 }
 
 # 6. Finalizing Genesis Node
-Write-Host "[5/7] Finalizing Genesis Node..." -ForegroundColor Yellow
+Write-Host "[5/8] Finalizing Genesis Node..." -ForegroundColor Yellow
 if (Test-Path "bin\zenith_kernel.exe") {
     Start-Process ".\bin\zenith_kernel.exe" -Wait
     Write-Host "Genesis Node Active. Synaptic Reputation Minted." -ForegroundColor Green
 }
 
 # 7. Git Integration & Remote Configuration
-Write-Host "[6/7] Linking to GitHub Repository: darkforgelabs922/Zenith..." -ForegroundColor Yellow
+Write-Host "[6/8] Linking to GitHub Repository: darkforgelabs922/Zenith..." -ForegroundColor Yellow
 $RepoUrl = "https://github.com/darkforgelabs922/Zenith"
 
 if (!(Test-Path ".git")) {
@@ -107,13 +107,26 @@ if (!(Test-Path ".git")) {
     & git remote add origin $RepoUrl
     Write-Host "Git initialized and remote 'origin' set to $RepoUrl" -ForegroundColor Green
 } else {
-    # Update remote if it already exists or just verify
     & git remote set-url origin $RepoUrl
     Write-Host "Git remote 'origin' verified for $RepoUrl" -ForegroundColor Green
 }
 
-# 8. Finalizing Local State
-Write-Host "[7/7] Preparing for initial push..." -ForegroundColor Yellow
+# 8. Git Identity Verification (Critical for Commit Success)
+Write-Host "[7/8] Verifying Git Identity Configuration..." -ForegroundColor Yellow
+$gitName = git config --global user.name
+$gitEmail = git config --global user.email
+
+if ([string]::IsNullOrEmpty($gitName)) {
+    Write-Host "Note: No Git user.name found. Setting to Director Adkins." -ForegroundColor Gray
+    git config --global user.name "Dr. Christopher Adkins"
+}
+if ([string]::IsNullOrEmpty($gitEmail)) {
+    Write-Host "Note: No Git user.email found. Setting to Darkforge Research." -ForegroundColor Gray
+    git config --global user.email "darkforge.research@outlook.com"
+}
+
+# 9. Finalizing Local State
+Write-Host "[8/8] Preparing for initial tracking push..." -ForegroundColor Yellow
 & git branch -M main
 Write-Host "Local branch set to 'main'." -ForegroundColor Gray
 
@@ -121,5 +134,11 @@ Write-Host "`n--- INSTALLATION COMPLETE ---" -ForegroundColor Cyan
 Write-Host "Zenith Root Directory: $ZenithPath"
 Write-Host "Director: Dr. Christopher Adkins"
 Write-Host "Repository URL: $RepoUrl"
-Write-Host "Status: ROOT_ORCID Verified. Ready for final git push." -ForegroundColor Gray
-Write-Host "Next Action: Run 'git add .', 'git commit -m \"Genesis Initialization\"', and 'git push -u origin main'" -ForegroundColor White
+Write-Host "Status: ROOT_ORCID Verified. Ready for tracking push." -ForegroundColor Gray
+
+Write-Host "`nTRACKING INSTRUCTIONS:" -ForegroundColor White
+Write-Host "To link your local 'main' to 'origin/main' and enable tracking, run these exactly:" -ForegroundColor Gray
+Write-Host "1. git add ."
+Write-Host "2. git commit -m `"Genesis Initialization`""
+Write-Host "3. git push -u origin main" -ForegroundColor Green
+Write-Host "(The -u flag establishes the permanent tracking relationship.)" -ForegroundColor Gray
