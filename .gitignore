@@ -1,0 +1,11 @@
+# ZENITH IP & SECRET SHIELD
+github_token.txt
+proprietary_specs.json
+zqa_anchor.txt
+local_shadow_key.txt
+bin/
+*.exe
+*.o
+blueprints/
+research_raw/
+*.log

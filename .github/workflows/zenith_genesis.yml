@@ -1,0 +1,40 @@
+# .github/workflows/zenith_genesis.yml
+name: Zenith Genesis Compute Phase (Windows 11 Compatible)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 0 * * *" # Maintaining synaptic weight daily
+
+jobs:
+  genesis-node:
+    # Running on windows-latest ensures compatibility with Dr. Adkins' local OS
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Zenith Source
+        uses: actions/checkout@v4
+
+      - name: Setup MSVC (Visual Studio Build Tools)
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Initialize MuReQua Engine (Windows)
+        shell: pwsh
+        run: |
+          # Create directory for binaries if not exists
+          if (!(Test-Path "bin")) { New-Item -ItemType Directory -Path "bin" }
+
+          # Compile using g++ (assuming MinGW) or cl.exe
+          # We use g++ here for consistency with previous specs
+          g++ -O3 core/engine/murequa_engine.cpp -o bin/zenith_kernel.exe
+
+          # Execute the Genesis node
+          ./bin/zenith_kernel.exe
+        env:
+          ROOT_ORCID: "0009-0007-6915-1199"
+
+      - name: Archive Synaptic Audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-genesis-audit-log
+          path: genesis_audit.log
