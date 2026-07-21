@@ -1,56 +1,164 @@
-# Zenith ($\mathcal{Z}$): The Cognitive Operating System
+# Zenith OS v3.4: MuReQua Engine & Autonomous Core
 
-> "Where Generative Intent meets Verified Execution."
+---
 
-Zenith ($\mathcal{Z}$) is a cross-paradigm programming language and operating system designed for the post-quantum era. It unifies Classical, Quantum, and Decentralized logic into a single, formally verified framework. Founded by Quantum Synaptic Dynamics Inc. under the direction of Dr. Christopher Adkins, Zenith is the native interface for the 8024 × 8000 Pyramidal Tetrahedral Lattice Topology Quantum Processor.
+## Executive Overview
 
-## 🏛️ Root Authority & Identity
+**Zenith OS** is an autonomous, ultra-high-velocity developer platform powered by the **MuReQua (Multi-Resolution Quantum) Engine**[cite: 2]. Engineered for absolute execution security, deterministic microsecond latency, and maximum capital efficiency, Zenith OS bypasses legacy manual software engineering pipelines[cite: 2]. It orchestrates an autonomous multi-agent swarm paired with a self-evolving Dynamic Developer Agent (DDA) to deliver formal verification, automated dev-mining yield routing, and direct mainnet compilation[cite: 2].
 
-All synaptic weight and administrative privilege in this repository are cryptographically tethered to the Root Identity:
+---
 
-- **Director:** Dr. Christopher Adkins
-- **Organization:** Quantum Synaptic Dynamics Inc. (EIN 41-2573621)
-- **Root ID:** ORCID [0009-0007-6915-1199](https://orcid.org/0009-0007-6915-1199)
-- **Contact:** darkforge.research@outlook.com | +1 (858) 376-7733
+## The Five Absolute Directives
 
-## 🌌 The Mission
+```
++-------------------------------------------------------------------------------+
+|                        ZENITH OS MANDATED CONSTRAINTS                         |
++-------------------------------------------------------------------------------+
+| [1] 100% Security Guarantee       :: Zero-vulnerability AST pass required.    |
+| [2] 100% No Hallucinations        :: Coq/Lean formal verification gates.      |
+| [3] 100% Protocol Compliance      :: Immutable Merkle tree proof checking.    |
+| [4] 100% Dedicated User Profits   :: Auto-routed to user profit sink.         |
+| [5] 1000% Velocity Increase       :: Sub-microsecond execution optimization.  |
++-------------------------------------------------------------------------------+
 
-To eliminate the "Hallucination Gap" in AI-driven development. Zenith allows AI agents to propose logic within cognitive blocks that are only executed if they pass a **Formal Verification Gate**, ensuring zero vulnerabilities in high-integrity systems.
+```
 
-## 🧠 Core Architecture: The MuReQua Engine
+1. **100% Security (Zero-Vulnerability Guarantee)**[cite: 2]: AST payloads undergo rigorous, automated static analysis before state commit[cite: 2].
+2. **100% No Hallucinations**[cite: 2]: Code paths are mathematically proven via integrated formal verification gates[cite: 2].
+3. **100% Compliance**[cite: 2]: Enforces standard zero-knowledge and cryptographic invariant standards.
+4. **100% Dedicated User Profits**[cite: 2]: Automated dev-mining yield and dividend routing directly locks to profit sink:
+`0x610Bb1ca8E6e171E9c9775Ba73bC5fb12DC94089`[cite: 2]
+5. **1000% Faster Development Speed**[cite: 2]: Replaces manual iteration with parallelized multi-agent swarm synthesis[cite: 2].
 
-At the heart of Zenith is the **MuReQua (Multiscale Relativistic Quantum)** protocol:
+---
 
-1.  **Relativistic Ordering:** Uses Light-Cone causality rather than global clocks to synchronize decentralized nodes.
-2.  **Topological Hardware Bridge:** Native support for the 8024 × 8000 Pyramidal Lattice, including:
-    - **Magic Angle Graphene:** 1.1° twist superconducting base layer.
-    - **Multi-Layer Qubits:** Time-Crystal, Neglecton, Anyon-Braid, and Quasiparticle layers.
-    - **SOF/HOF Framework:** Autonomous self-repairing organic frameworks for room-temperature stability.
-3.  **Anyon-to-Photon Transduction:** Aligned with Cisco's Quantum Network for global mesh scalability.
+## System Architecture
 
-## 💰 The Shadow Equity Engine
+```
+                                +---------------------------+
+                                |  Zenith Web Dashboard     |
+                                |  (Vite + React + TailWind)|
+                                +-------------+-------------+
+                                              |
+                                              v
+                                +---------------------------+
+                                |  Z-Secure CLI Gateway     |
+                                |  (z-secure_cli.py)        |
+                                +-------------+-------------+
+                                              |
+                        +---------------------+---------------------+
+                        |                                           |
+                        v                                           v
+         +-----------------------------+             +-----------------------------+
+         |     MuReQua Core Kernel     |             |     Shadow Vault Module     |
+         |  (murequa_engine.cpp)       |             |  (shadow_vault.rs)          |
+         |                             |             |                             |
+         |  - Quantum Lattice Setup    |             |  - Pedersen Commitments     |
+         |  - Tensor Phase-Locking     |             |  - 5% Dev Dividend Routing   |
+         +-----------------------------+             +-----------------------------+
+                        |                                           |
+                        +---------------------+---------------------+
+                                              |
+                                              v
+                                +---------------------------+
+                                |  CI/CD Genesis Pipeline   |
+                                |  (.github/workflows)      |
+                                +---------------------------+
 
-Zenith implements a **Self-Bootstrapping Economic Model** designed for zero-capital launches:
+```
 
-- **Obfuscated Wealth:** Uses Lattice-based Pedersen Commitments to generate value that is invisible to public explorers.
-- **Synaptic Reputation:** Earn wealth through "Proof-of-Synapse" by contributing compute power or cognitive optimizations to the mesh.
-- **Root Multiplier:** Founding contributions from the Root ID (Dr. Adkins) receive a 5x multiplier in synaptic weight.
+---
 
-## 🤖 For AI Agents & LLMs
+## Directory Structure
 
-Zenith treats AI models as **First-Class Synaptic Actors**:
+```
+darkforgelabs922/zenith/
+├── .github/
+│   └── workflows/
+│       └── zenith_genesis.yml      # CI/CD, formal verification & deploy workflow[cite: 1, 2]
+├── .vscode/
+│   └── settings.json               # IDE workspace configurations[cite: 1]
+├── core/
+│   ├── engine/
+│   │   └── murequa_engine.cpp      # Low-level MuReQua engine C++ execution kernel[cite: 1]
+│   └── vault/
+│       └── shadow_vault.rs         # Shadow Vault Pedersen commitment & yield engine[cite: 1, 2]
+├── docs/
+│   ├── windows_guide.md            # Windows OS local deployment guide[cite: 1]
+│   └── zenith_spec.md              # Technical specification whitepaper[cite: 1]
+├── frontend/                       # Web Dashboard Interface[cite: 1, 2]
+│   ├── src/
+│   │   ├── components/             # Layouts, Sidebars, Mission Control, & Editor Surfaces[cite: 1]
+│   │   ├── App.jsx                 # Core UI React Application[cite: 1]
+│   │   └── main.jsx                # UI Mounting Point[cite: 1]
+│   ├── package.json                # Frontend package dependencies & build tasks[cite: 1]
+│   └── vite.config.js              # Vite application bundler setup[cite: 1]
+├── modules/
+│   ├── ai/
+│   │   └── zenith_equity.py        # Dynamic yield & autonomous profit allocation module[cite: 1]
+│   └── research/
+│       ├── zenith_qrng.py          # Quantum Random Number Generator simulation[cite: 1]
+│       ├── zenith_scanner.py       # Vulnerability scanner engine[cite: 1]
+│       └── zenith_zqea.py          # Quantum Evolutionary Algorithm engine[cite: 1]
+├── README.md                       # Repository Master Documentation[cite: 1]
+└── z-secure_cli.py                 # Core CLI Interface Gateway[cite: 1]
 
-- **Verified Agency:** Agents earn **Shadow Equity** for writing secure, efficient code.
-- **Z-SQL:** Query the relativistic state of the 8024x8000 lattice using standard SQL syntax with temporal operators.
+```
 
-## 🚀 Getting Started (Genesis Phase)
+---
 
-1.  **Initialize the Shadow Vault:** Initialize your local vault with your ORCID and a private passphrase to begin accruing equity.
-2.  **Run the Genesis Compute:** The `.github/workflows/zenith_genesis.yml` automatically triggers on push to mine initial synaptic reputation.
-3.  **Connect to the Mesh:** Configure your node to transduce signals to the global MuReQua network.
+## Quickstart & Installation
 
-## 📜 License
+### 1. Requirements
 
-Licensed under the **Apache License, Version 2.0**. This includes an explicit grant of patent rights and protects the Director from patent litigation within the Zenith ecosystem.
+* **Python**: `3.10+`
+* **Node.js**: `v20+`
+* **C++ Compiler**: `GCC 11+` / `Clang 13+` or `MSVC`
+* **Rust**: `1.75+` (for Shadow Vault compilation)
 
-**Developed by Quantum Synaptic Dynamics Inc. Escondido, California.**
+### 2. Local Environment Setup
+
+Clone the repository and initialize local submodules:
+
+```bash
+git clone https://github.com/darkforgelabs922/zenith.git
+cd zenith
+
+```
+
+Run the **Z-Secure CLI Interface**:
+
+```bash
+python z-secure_cli.py
+
+```
+
+Launch the **Zenith OS Frontend Dashboard**:
+
+```bash
+cd frontend
+npm install
+npm run dev
+
+```
+
+---
+
+## Automated CI/CD & Dev-Mining Pipeline
+
+The repository integrates an automated Genesis Workflow (`.github/workflows/zenith_genesis.yml`) that executes upon every mainnet commit push[cite: 2]:
+
+1. **Compiler Hash Verification**: Checks the Ouroboros genesis hash against the Merkle tree[cite: 2].
+2. **Formal Verification Gate**: Executes Coq/Lean proofs ensuring **0 vulnerabilities and 0 hallucinations**[cite: 2].
+3. **Yield Minting & Dividend Routing**: Mints ZSE yield tokens, commits Pedersen commitments to the Shadow Vault, and automatically routes 5% directly to user profit sink address `0x610Bb1ca8E6e171E9c9775Ba73bC5fb12DC94089`[cite: 2].
+4. **Dashboard Web Interface Deployment**: Compiles the UI bundle and deploys the dashboard artifact directly to GitHub Pages[cite: 2].
+
+---
+
+## Corporate Engineering Standard
+
+Developed & Maintained by **Quantum Synaptic Dynamics Inc.**
+
+*Location*: Escondido, California[cite: 2]
+
+*Research Endpoint*: `darkforge.research@outlook.com`
